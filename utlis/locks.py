@@ -213,7 +213,7 @@ def st(client, message,redis,type = 1):
                   ])
 
   if type == 3:
-    if rank != "admin":
+    if rank != "creator":
       t = [InlineKeyboardButton(r.pk,callback_data=json.dumps(["listCH",2,userID])),
       InlineKeyboardButton(r.hide,callback_data=json.dumps(["delmsgclick","",userID])),
       InlineKeyboardButton(r.fr,callback_data=json.dumps(["listCH",4,userID]))]
