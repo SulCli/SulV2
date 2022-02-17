@@ -117,14 +117,14 @@ def st(client, message,redis,type = 1):
   if redis.sismember("{}Nbot:Lfwd".format(BOT_ID),chatID):#18
     fwd = c.STfwd+" "+r.false
   else:
-    fwd = c.STfwd+" "+r.true
+    fwd = c.STfwd+" "+r.false
 
   if redis.sismember("{}Nbot:Lnote".format(BOT_ID),chatID):#19
     note = c.STnote+" "+r.false
   else:
     note = c.STnote+" "+r.true
   if redis.sismember("{}Nbot:Ledits".format(BOT_ID),chatID):#19
-    edits = c.STedits+" "+r.false
+    edits = c.STedits+" "+r.true
   else:
     edits = c.STedits+" "+r.true
   if redis.sismember("{}Nbot:Llongtext".format(BOT_ID),chatID):#19
@@ -378,7 +378,7 @@ def st_res(client, message,redis,type = 1):
     bots = c.STbots+" "+r.true2
 
   if redis.sismember("{}Nbot:Lfwd:res".format(BOT_ID),chatID):#18
-    fwd = c.STfwd+" "+r.false2
+    fwd = c.STfwd+" "+r.true2
   else:
     fwd = c.STfwd+" "+r.true2
 
@@ -389,7 +389,7 @@ def st_res(client, message,redis,type = 1):
   if redis.sismember("{}Nbot:Ledits:res".format(BOT_ID),chatID):#19
     edits = c.STedits+" "+r.false2
   else:
-    edits = c.STedits+" "+r.true2
+    edits = c.STedits+" "+r.false2
   if redis.sismember("{}Nbot:Llongtext:res".format(BOT_ID),chatID):#19
     longtext = c.STlongtext+" "+r.false2
   else:
