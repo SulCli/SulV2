@@ -1,7 +1,7 @@
 #  تنصيب سورس السلطان الجديد  V3 ⇓⇓⇓ 
 
 ```
-cd ~;rm -rf SulV2;wget -q -O - "https://raw.githubusercontent.com/SulCli/SulV2/master/install.txt" | bash;cd SulV2;python3.7 setup.py
+cd ~;rm -rf SulV2;wget -q -O - "https://raw.githubusercontent.com/SulCli/SulV2/master/install.txt" | bash;cd SulV2;python3.8 setup.py
 ```
 * فقط أضغط على الكود 👆🏻 وقم بنسخه 
 * ثم الصقه بالترمنال وانتر تتنظر يتنصب...
