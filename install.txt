@@ -1,5 +1,12 @@
-echo -e "\e[1;91m   ▄█    █▄    ▄████████    ▄████████    ▄████████  Channel : @uui9u \n  ███    ███   ███    ███   ███    ███   ███    ███ \n  ███    ███   ███    █▀    ███    █▀    ███    ███ \n  ███    ███  ▄███▄▄▄      ▄███▄▄▄      ▄███▄▄▄▄██▀  Bot : @mribot\n  ███    ███ ▀▀███▀▀▀     ▀▀███▀▀▀     ▀▀███▀▀▀▀▀   \n  ███    ███   ███    █▄    ███    █▄  ▀███████████ Dev : @SSSSVS\n  ███    ███   ███    ███   ███    ███   ███    ███ \n   ▀██████▀    ██████████   ██████████   ███    ███  By Source SulTaN\e[0m"
-echo -n "Downloading python3.8.." 
+echo -e "\e[1;91m   Channel : @uui9u \n
+  _________     .__  \n 
+ /   _____/__ __|  | \n
+ \_____  \|  |  \  |   Bot : @mribot\n
+ /        \  |  /  |__ \n 
+/_______  /____/|____/ Dev : @SSSSVS\n 
+        \/             \n 
+  By Source SulTaN\e[0m"
+echo -e "\Downloading python3.8.." 
 sudo apt-get update -y &>/dev/null
 sudo add-apt-repository ppa:deadsnakes/ppa -y &>/dev/null
 sudo apt-get update -y &>/dev/null
