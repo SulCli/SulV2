@@ -175,7 +175,7 @@ def st(client, message,redis,type = 1):
     reply_markup=InlineKeyboardMarkup([
         [
           InlineKeyboardButton(link,callback_data=json.dumps(["LU","Llink",userID,1])),
-          InlineKeyboardButton(bots,callback_data=json.dumps(["LU","Lbots",userID,4])),
+          InlineKeyboardButton(bots,callback_data=json.dumps(["LU","Lbots",userID,3])),
           ],[
             InlineKeyboardButton(video,callback_data=json.dumps(["LU","Lvideo",userID,1])),
             InlineKeyboardButton(note,callback_data=json.dumps(["LU","Lnote",userID,1])),
@@ -201,7 +201,7 @@ def st(client, message,redis,type = 1):
             InlineKeyboardButton(contact,callback_data=json.dumps(["LU","Lcontact",userID,2])),
             ],[
               InlineKeyboardButton(sticker,callback_data=json.dumps(["LU","Lsticker",userID,2])),
-              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU","Lfwd",userID,4])),
+              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU","Lfwd",userID,3])),
               ],[
                 InlineKeyboardButton(username,callback_data=json.dumps(["LU","Lusername",userID,2])),
                 InlineKeyboardButton(english,callback_data=json.dumps(["LU","Lenglish",userID,2])),
@@ -225,7 +225,7 @@ def st(client, message,redis,type = 1):
                     InlineKeyboardButton(tag,callback_data=json.dumps(["LU","Ltag",userID,3])),
           ],[
                     InlineKeyboardButton(join,callback_data=json.dumps(["LU","Ljoin",userID,3])),
-                    InlineKeyboardButton(edits,callback_data=json.dumps(["LU","Ledits",userID,4])),
+                    InlineKeyboardButton(edits,callback_data=json.dumps(["LU","Ledits",userID,3])),
             ],[
                     InlineKeyboardButton(longtext,callback_data=json.dumps(["LU","Llongtext",userID,3])),
               ],t
@@ -399,7 +399,7 @@ def st_res(client, message,redis,type = 1):
     reply_markup=InlineKeyboardMarkup([
         [
           InlineKeyboardButton(link,callback_data=json.dumps(["LU-res","Llink-res",userID,1])),
-          InlineKeyboardButton(bots,callback_data=json.dumps(["LU-res","Lbots-res",userID,1])),
+          InlineKeyboardButton(bots,callback_data=json.dumps(["LU-res","Lbots-res",userID,3])),
           ],[
             InlineKeyboardButton(video,callback_data=json.dumps(["LU-res","Lvideo-res",userID,1])),
             InlineKeyboardButton(note,callback_data=json.dumps(["LU-res","Lnote-res",userID,1])),
@@ -425,7 +425,7 @@ def st_res(client, message,redis,type = 1):
             InlineKeyboardButton(contact,callback_data=json.dumps(["LU-res","Lcontact-res",userID,2])),
             ],[
               InlineKeyboardButton(sticker,callback_data=json.dumps(["LU-res","Lsticker-res",userID,2])),
-              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU-res","Lfwd-res",userID,2])),
+              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU-res","Lfwd-res",userID,3])),
               ],[
                 InlineKeyboardButton(username,callback_data=json.dumps(["LU-res","Lusername-res",userID,2])),
                 InlineKeyboardButton(english,callback_data=json.dumps(["LU-res","Lenglish-res",userID,2])),
