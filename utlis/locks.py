@@ -117,14 +117,14 @@ def st(client, message,redis,type = 1):
   if redis.sismember("{}Nbot:Lfwd".format(BOT_ID),chatID):#18
     fwd = c.STfwd+" "+r.false
   else:
-    fwd = c.STfwd+" "+r.false
+    fwd = c.STfwd+" "+r.true
 
   if redis.sismember("{}Nbot:Lnote".format(BOT_ID),chatID):#19
     note = c.STnote+" "+r.false
   else:
     note = c.STnote+" "+r.true
   if redis.sismember("{}Nbot:Ledits".format(BOT_ID),chatID):#19
-    edits = c.STedits+" "+r.true
+    edits = c.STedits+" "+r.false
   else:
     edits = c.STedits+" "+r.true
   if redis.sismember("{}Nbot:Llongtext".format(BOT_ID),chatID):#19
@@ -175,7 +175,7 @@ def st(client, message,redis,type = 1):
     reply_markup=InlineKeyboardMarkup([
         [
           InlineKeyboardButton(link,callback_data=json.dumps(["LU","Llink",userID,1])),
-          InlineKeyboardButton(bots,callback_data=json.dumps(["LU","Lbots",userID,3])),
+          InlineKeyboardButton(bots,callback_data=json.dumps(["LU","Lbots",userID,1])),
           ],[
             InlineKeyboardButton(video,callback_data=json.dumps(["LU","Lvideo",userID,1])),
             InlineKeyboardButton(note,callback_data=json.dumps(["LU","Lnote",userID,1])),
@@ -201,7 +201,7 @@ def st(client, message,redis,type = 1):
             InlineKeyboardButton(contact,callback_data=json.dumps(["LU","Lcontact",userID,2])),
             ],[
               InlineKeyboardButton(sticker,callback_data=json.dumps(["LU","Lsticker",userID,2])),
-              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU","Lfwd",userID,3])),
+              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU","Lfwd",userID,2])),
               ],[
                 InlineKeyboardButton(username,callback_data=json.dumps(["LU","Lusername",userID,2])),
                 InlineKeyboardButton(english,callback_data=json.dumps(["LU","Lenglish",userID,2])),
@@ -213,7 +213,7 @@ def st(client, message,redis,type = 1):
                   ])
 
   if type == 3:
-    if rank != "creator":
+    if rank != "admin":
       t = [InlineKeyboardButton(r.pk,callback_data=json.dumps(["listCH",2,userID])),
       InlineKeyboardButton(r.hide,callback_data=json.dumps(["delmsgclick","",userID])),
       InlineKeyboardButton(r.fr,callback_data=json.dumps(["listCH",4,userID]))]
@@ -378,7 +378,7 @@ def st_res(client, message,redis,type = 1):
     bots = c.STbots+" "+r.true2
 
   if redis.sismember("{}Nbot:Lfwd:res".format(BOT_ID),chatID):#18
-    fwd = c.STfwd+" "+r.true2
+    fwd = c.STfwd+" "+r.false2
   else:
     fwd = c.STfwd+" "+r.true2
 
@@ -389,7 +389,7 @@ def st_res(client, message,redis,type = 1):
   if redis.sismember("{}Nbot:Ledits:res".format(BOT_ID),chatID):#19
     edits = c.STedits+" "+r.false2
   else:
-    edits = c.STedits+" "+r.false2
+    edits = c.STedits+" "+r.true2
   if redis.sismember("{}Nbot:Llongtext:res".format(BOT_ID),chatID):#19
     longtext = c.STlongtext+" "+r.false2
   else:
@@ -399,7 +399,7 @@ def st_res(client, message,redis,type = 1):
     reply_markup=InlineKeyboardMarkup([
         [
           InlineKeyboardButton(link,callback_data=json.dumps(["LU-res","Llink-res",userID,1])),
-          InlineKeyboardButton(bots,callback_data=json.dumps(["LU-res","Lbots-res",userID,3])),
+          InlineKeyboardButton(bots,callback_data=json.dumps(["LU-res","Lbots-res",userID,1])),
           ],[
             InlineKeyboardButton(video,callback_data=json.dumps(["LU-res","Lvideo-res",userID,1])),
             InlineKeyboardButton(note,callback_data=json.dumps(["LU-res","Lnote-res",userID,1])),
@@ -425,7 +425,7 @@ def st_res(client, message,redis,type = 1):
             InlineKeyboardButton(contact,callback_data=json.dumps(["LU-res","Lcontact-res",userID,2])),
             ],[
               InlineKeyboardButton(sticker,callback_data=json.dumps(["LU-res","Lsticker-res",userID,2])),
-              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU-res","Lfwd-res",userID,3])),
+              InlineKeyboardButton(fwd,callback_data=json.dumps(["LU-res","Lfwd-res",userID,2])),
               ],[
                 InlineKeyboardButton(username,callback_data=json.dumps(["LU-res","Lusername-res",userID,2])),
                 InlineKeyboardButton(english,callback_data=json.dumps(["LU-res","Lenglish-res",userID,2])),
