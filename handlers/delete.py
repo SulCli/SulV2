@@ -198,7 +198,7 @@ def delete(client, message,redis):
     if redis.sismember("{}Nbot:Ljoin".format(BOT_ID),chatID):#17
       Bot("deleteMessage",{"chat_id":chatID,"message_id":message.message_id})
 
-  if message.forward_date:
+  if message.forward_date and (rank is "sudo" or rank is "asudo" or rank is "sudos" or rank is "malk" or rank is "acreator"):
     if redis.sismember("{}Nbot:Lfwd".format(BOT_ID),chatID):#18
       Bot("deleteMessage",{"chat_id":chatID,"message_id":message.message_id})
       if redis.sismember("{}Nbot:Lfwd:res".format(BOT_ID),chatID):
