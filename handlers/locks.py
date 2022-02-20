@@ -226,7 +226,7 @@ def locks(client, message,redis):
     else:
       send_msg("LUN",client, message,r.unlocked,"Lmarkdown",T,redis)
 
-  if text == c.Lbots :
+  if text == c.Lbots and  (rank is "sudo" or rank is "asudo" or rank is "sudos" or rank is "malk" or rank is "acreator"):
     get = redis.sismember("{}Nbot:Lbots".format(BOT_ID),chatID)
     if get :
       send_msg("LUN",client, message,r.locked,"Lbots",T,redis)
@@ -234,7 +234,7 @@ def locks(client, message,redis):
       save = redis.sadd("{}Nbot:Lbots".format(BOT_ID),chatID)
       send_msg("LU",client, message,r.lock,"Lbots",T,redis)
 
-  if text == c.Ubots :
+  if text == c.Ubots and  (rank is "sudo" or rank is "asudo" or rank is "sudos" or rank is "malk" or rank is "acreator"):
     get = redis.sismember("{}Nbot:Lbots".format(BOT_ID),chatID)
     if get :
       save = redis.srem("{}Nbot:Lbots".format(BOT_ID),chatID)
@@ -352,7 +352,7 @@ def locks(client, message,redis):
     else:
       send_msg("LUN",client, message,r.unlocked,"Llongtext",T,redis)
 
-  if text == c.Lall :
+  if text == c.Lall and  (rank is "sudo" or rank is "asudo" or rank is "sudos" or rank is "malk" or rank is "acreator"):
     get = redis.sismember("{}Nbot:Lall".format(BOT_ID),chatID)
     if get :
       send_msg("LUN",client, message,r.locked,"Lall",T,redis)
@@ -360,7 +360,7 @@ def locks(client, message,redis):
       save = redis.sadd("{}Nbot:Lall".format(BOT_ID),chatID)
       send_msg("LU",client, message,r.lock,"Lall",T,redis)
 
-  if text == c.Uall :
+  if text == c.Uall and  (rank is "sudo" or rank is "asudo" or rank is "sudos" or rank is "malk" or rank is "acreator"):
     get = redis.sismember("{}Nbot:Lall".format(BOT_ID),chatID)
     if get :
       save = redis.srem("{}Nbot:Lall".format(BOT_ID),chatID)
