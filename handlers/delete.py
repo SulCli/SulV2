@@ -197,9 +197,9 @@ def delete(client, message,redis):
         Bot("sendMessage",{"chat_id":chatID,"text":r.kickbotadd.format(username,first_name),"reply_to_message_id":message.message_id,"parse_mode":"html"})
     if redis.sismember("{}Nbot:Ljoin".format(BOT_ID),chatID):#17
       Bot("deleteMessage",{"chat_id":chatID,"message_id":message.message_id})
-
-  if message.forward_date:
-    if (rank is False or rank is 2) and group is True and redis.sismember("{}Nbot:Lfwd".format(BOT_ID),chatID):
+  if (rank is not False or rank is not  2 or rank != "acreator"):
+    if message.forward_date:
+     if redis.sismember("{}Nbot:Lfwd".format(BOT_ID),chatID):
             Bot("deleteMessage",{"chat_id":chatID,"message_id":message.message_id}):#18
         if redis.sismember("{}Nbot:Lfwd:res".format(BOT_ID),chatID):
         Bot("restrictChatMember",{"chat_id": chatID,"user_id": userId,"can_send_messages": 0,"can_send_media_messages": 0,"can_send_other_messages": 0,
