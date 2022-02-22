@@ -544,8 +544,8 @@ def gpcmd(client, message,redis):
 <i>italic</i>
 __italic__
 
-<a href=\"https://t.me/uui9u\">SulTaN_v3</a>
-[SulTaN_v3](https://t.me/uui9u)
+<a href=\"https://t.me/uui9u\">ALSULTAN</a>
+[ALSULTAN](https://t.me/uui9u)
 
 <code>inline fixed-width code</code>
 `inline fixed-width code`
@@ -666,6 +666,12 @@ __italic__
       if re.search(c.STreply, text):
         tx = text.replace(c.RPreply,"")
         if redis.hexists("{}Nbot:{}:TXreplys".format(BOT_ID,chatID),tx):
+          Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
+        elif redis.hexists("{}Nbot:{}:STreplys".format(BOT_ID,chatID),tx):
+          Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
+        elif redis.hexists("{}Nbot:{}:GFreplys".format(BOT_ID,chatID),tx):
+          Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
+        elif redis.hexists("{}Nbot:{}:VOreplys".format(BOT_ID,chatID),tx):
           Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
         elif redis.hexists("{}Nbot:{}:AUreplys".format(BOT_ID,chatID),tx):
           Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
