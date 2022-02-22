@@ -40,18 +40,6 @@ def gpcmd(client, message,redis):
       redis.hdel("{}Nbot:step".format(BOT_ID),userID)
       Bot("sendMessage",{"chat_id":chatID,"text":r.SRtext.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
     
-    if message.sticker:
-      ID = message.sticker.file_id
-      redis.hset("{}Nbot:{}:STreplys".format(BOT_ID,chatID),tx,ID)
-      redis.hdel("{}Nbot:step".format(BOT_ID),userID)
-      Bot("sendMessage",{"chat_id":chatID,"text":r.SRst.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
-
-    if message.animation:
-      ID = message.animation.file_id
-      redis.hset("{}Nbot:{}:GFreplys".format(BOT_ID,chatID),tx,ID)
-      redis.hdel("{}Nbot:step".format(BOT_ID),userID)
-      Bot("sendMessage",{"chat_id":chatID,"text":r.SRgf.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
-
     if message.voice:
       ID = message.voice.file_id
       redis.hset("{}Nbot:{}:VOreplys".format(BOT_ID,chatID),tx,ID)
