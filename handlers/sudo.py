@@ -274,6 +274,12 @@ def sudo(client, message,redis):
 			tx = text.replace(c.RPreplyBOT,"")
 			if redis.hexists("{}Nbot:TXreplys".format(BOT_ID,chatID),tx):
 				Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
+			elif redis.hexists("{}Nbot:STreplys".format(BOT_ID,chatID),tx):
+				Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
+			elif redis.hexists("{}Nbot:GFreplys".format(BOT_ID,chatID),tx):
+				Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
+			elif redis.hexists("{}Nbot:VOreplys".format(BOT_ID,chatID),tx):
+				Bot("sendMessage",{"chat_id":chatID,"text":r.Yrp.format(tx),"reply_to_message_id":message.message_id,"parse_mode":"html"})
 			else:
 				redis.hset("{}Nbot:stepSUDO".format(BOT_ID),userID,tx)
 				kb = InlineKeyboardMarkup([[InlineKeyboardButton(r.MoreInfo, url="t.me/"+uui9u)]])
